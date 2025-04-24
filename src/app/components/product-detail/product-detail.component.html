@@ -1,0 +1,48 @@
+<div class="product-detail-container" *ngIf="product">
+  <mat-card class="product-card">
+    <div class="product-image">
+      <img [src]="product.imageUrl" [alt]="product.name">
+    </div>
+    <div class="product-info">
+      <h1>{{ product.name }}</h1>
+      <p class="description">{{ product.description }}</p>
+      <p class="price">${{ product.price }}</p>
+      <p class="stock">In Stock: {{ product.stock }}</p>
+      <p class="rating">
+        Rating: {{ product.rating }}/5
+        <mat-icon>star</mat-icon>
+      </p>
+      <div class="quantity-selector">
+        <button mat-icon-button (click)="decreaseQuantity()" [disabled]="quantity <= 1">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <span>{{ quantity }}</span>
+        <button mat-icon-button (click)="increaseQuantity()" [disabled]="quantity >= product.stock">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      <button mat-raised-button color="primary" (click)="addToCart()" [disabled]="product.stock === 0">
+        Add to Cart
+      </button>
+    </div>
+  </mat-card>
+
+  <mat-card class="reviews-card">
+    <mat-card-header>
+      <mat-card-title>Customer Reviews</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngFor="let review of product.reviews" class="review">
+        <h3>{{ review.userName }}</h3>
+        <p class="review-rating">
+          Rating: {{ review.rating }}/5
+          <mat-icon>star</mat-icon>
+        </p>
+        <p class="review-comment">{{ review.comment }}</p>
+        <p class="review-date">{{ review.date | date }}</p>
+        <mat-divider></mat-divider>
+      </div>
+      <p *ngIf="product.reviews.length === 0">No reviews yet.</p>
+    </mat-card-content>
+  </mat-card>
+</div> 

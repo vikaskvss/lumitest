@@ -1,0 +1,20 @@
+<div class="product-detail" *ngIf="product">
+  <mat-card>
+    <img mat-card-image [src]="product.image" [alt]="product.name">
+    <mat-card-content>
+      <h1>{{product.name}}</h1>
+      <p class="price">{{product.price | currency}}</p>
+      <p class="description">{{product.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">
+        <mat-icon>add_shopping_cart</mat-icon>
+        Add to Cart
+      </button>
+      <button mat-button>
+        <mat-icon>favorite</mat-icon>
+        Add to Wishlist
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div> 

@@ -1,0 +1,39 @@
+<div class="main-container">
+  <mat-toolbar color="primary">
+    <a routerLink="/" class="logo">E-Commerce</a>
+    <span class="spacer"></span>
+    <a mat-button routerLink="/products">Products</a>
+    <a mat-button routerLink="/cart">
+      <mat-icon [matBadge]="cartItems" matBadgeColor="warn">shopping_cart</mat-icon>
+    </a>
+  </mat-toolbar>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Your trusted online shopping destination</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: support&#64;ecommerce.com</p>
+        <p>Phone: (555) 123-4567</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" target="_blank">Facebook</a>
+          <a href="#" target="_blank">Twitter</a>
+          <a href="#" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 E-Commerce. All rights reserved.</p>
+    </div>
+  </footer>
+</div> 

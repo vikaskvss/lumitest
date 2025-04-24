@@ -1,0 +1,32 @@
+.product-detail {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.price {
+  font-size: 24px;
+  color: #2196f3;
+  font-weight: bold;
+}
+
+.description {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+mat-card-actions {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+} 
